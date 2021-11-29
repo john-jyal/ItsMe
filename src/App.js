@@ -1,25 +1,26 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+import Nav from './global/Nav';
+import Works from './works';
 import './App.css';
 
-function App() {
+const headerClick = () => {};
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router basename="/">
+      <Link to="/">
+        <header className="header" onClick={headerClick}>
+          <h1>형석's 임시 사이트</h1>
+        </header>
+      </Link>
+      <div className="nav-area">
+        <Nav />
+      </div>
+      <Switch>
+        <Route path="/works" component={Works} />
+      </Switch>
+    </Router>
   );
-}
+};
 
 export default App;
