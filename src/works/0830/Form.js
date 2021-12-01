@@ -1,17 +1,23 @@
 import React, { useState } from 'react';
 
 const Form = (props) => {
-  const { setUsers } = props;
-  const [user, setUser] = useState();
-  const onClick = (e) => {
+  const { users, setUsers } = props;
+  const [user, setUser] = useState({ id: '', password: '' });
+  const onClick = () => {
+    setUsers([...users, user]);
+  };
+  const onReset = () => {
+    setUsers([]);
+  };
+  const onChange = (e) => {
     console.log(e.target);
   };
   return (
     <>
-      <form>
+      <form onChange={onChange}>
         <label>
           아이디 :
-          <input type="text" />
+          <input type="text" name="id" />
         </label>
         <label>
           비밀번호 :
@@ -19,6 +25,9 @@ const Form = (props) => {
         </label>
         <button type="button" onClick={onClick}>
           제출
+        </button>
+        <button type="button" onClick={onReset}>
+          초기화
         </button>
       </form>
     </>

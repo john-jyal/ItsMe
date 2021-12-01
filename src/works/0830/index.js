@@ -3,12 +3,12 @@ import Form from './Form';
 import Users from './Users';
 
 const Work0830 = () => {
-  const [users, setUsers] = useState();
+  const [users, setUsers] = useState([]);
 
   return (
     <div>
-      <Form setUsers={setUsers} />
-      <Users users setUsers />
+      <Form users={users} setUsers={setUsers} />
+      <Users users={users} />
     </div>
   );
 };
