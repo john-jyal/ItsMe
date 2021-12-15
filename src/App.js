@@ -8,11 +8,11 @@ const headerClick = () => {};
 const App = () => {
   return (
     <Router basename="/">
-      <Link to="/">
-        <header className="header" onClick={headerClick}>
-          <h1>형석's 임시 사이트</h1>
-        </header>
-      </Link>
+      {/*<Link to="/">*/}
+      {/*  <header className="header" onClick={headerClick}>*/}
+      {/*    <h1>형석's 임시 사이트</h1>*/}
+      {/*  </header>*/}
+      {/*</Link>*/}
       <div className="nav-area">
         <Nav />
       </div>
